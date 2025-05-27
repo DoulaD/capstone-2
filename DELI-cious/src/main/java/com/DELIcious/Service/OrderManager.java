@@ -11,9 +11,6 @@ public class OrderManager {
 currentOrder = new Order();
 boolean ordering = true;
 
-        System.out.println("Welcome to DELI-cious!");
-        System.out.println("1");
-        System.out.println();
 
     }
 

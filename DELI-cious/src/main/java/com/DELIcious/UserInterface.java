@@ -15,9 +15,20 @@ public class UserInterface {
             System.out.println("1) New Order");
             System.out.println("0 Exit");
 
-            String Choice = scanner.nextLine();
+            String choice = scanner.nextLine();
 
-            Switch (choice){
+            switch (choice) {
+                case "1 New Order":
+                    orderManager.newOrder(scanner);
+                    break;
+                case "0 Exit" :
+                    System.out.println("Thank you for using DELI-cious!");
+                    return;
+                default:
+                    System.out.println("Invalid choice.");
+
+
+            }
 
 
         }
