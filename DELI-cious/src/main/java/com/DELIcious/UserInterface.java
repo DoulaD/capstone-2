@@ -13,7 +13,7 @@ public class UserInterface {
 
             System.out.println("Welcome to DELI-cious!");
             System.out.println("1) New Order");
-            System.out.println("0 Exit");
+            System.out.println("0) Exit");
 
             String choice = scanner.nextLine();
 

@@ -1,4 +1,4 @@
 package com.DELIcious.models;
 
-public class Toppings {
+public class ToppingType {
 }
