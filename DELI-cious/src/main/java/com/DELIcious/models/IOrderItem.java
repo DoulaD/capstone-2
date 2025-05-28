@@ -2,7 +2,10 @@ package com.DELIcious.models;
 
 public interface IOrderItem {
 
-    String description();
+
+
+    String getName();
+
     double getPrice();
 
 }
