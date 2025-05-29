@@ -9,10 +9,10 @@ public class OrderReceipt {
     public static void saveReceipt(Order order){
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd-HHmmss");
-        String fileName = "receipts/" + LocalDateTime.now().format(formatter) + ".txt";
+        String fileName = "receipts.txt/" + LocalDateTime.now().format(formatter) + ".txt";
 
 
-        try (FileWriter Writer = new FileWriter ("src/receipts")) {
+        try (FileWriter Writer = new FileWriter ("src/receipts.txt")) {
             Writer.write(order.getOrderDetails());
             System.out.println("Receipt saved to : " + fileName);
         }

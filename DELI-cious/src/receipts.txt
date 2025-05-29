@@ -1,0 +1,18 @@
+===========>  Your Order  <==========
+12" rye Sandwich (Toasted)     $19.00
+Toppings: 
+   -               steak $3.00
+   -             chicken $3.00
+   -       bacon (extra) $4.50
+   -             lettuce $0.00
+   -              tomato $0.00
+   -              onions $0.00
+   -             peppers $0.00
+   -                     $0.00
+   Sauces:       - mayo
+      - ranch
+ BBQChips                       $1.50
+large Citrus-punch Drink       $3.00
+-----------------------------------
+TOTAL:                         $23.50
+===================================

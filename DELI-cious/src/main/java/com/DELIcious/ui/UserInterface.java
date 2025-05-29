@@ -16,7 +16,7 @@ public class UserInterface {
         boolean running = true;
 
         while (running) {
-            System.out.println("\n==== DELI-cious POS ====");
+            System.out.println("\n==== DELI-cious  ====");
             System.out.println("1) New Order");
             System.out.println("0) Exit");
             System.out.print("Enter your choice: ");
@@ -79,7 +79,7 @@ public class UserInterface {
     }
 
     private void checkout() {
-        System.out.println("\n==== Checkout ====");
+        System.out.println("\n====$$$$ Checkout $$$$====");
         System.out.println(currentOrder.getOrderDetails());
         System.out.print("Confirm order? (Y/N): ");
         String confirm = scanner.nextLine();
@@ -111,12 +111,34 @@ public class UserInterface {
         List<Topping> toppings = new ArrayList<>();
         System.out.println("\nAdd premium toppings (meat/cheese). Type 'done' to finish.");
         while (true) {
-            System.out.print("Enter premium topping (steak, ham, bacon, cheddar, swiss, etc): ");
+            System.out.print("Enter premium topping (+MEATS+: steak, ham, bacon, salami, roast beef, chicken, bacon, +CHEESE+: cheddar, swiss, american, provolone): ");
             String name = scanner.nextLine();
-            if (name.equalsIgnoreCase("done")) break;
+            if (name.equalsIgnoreCase("done" )) break;
 
-            System.out.print("Is this an extra portion? (Y/N): ");
-            boolean isExtra = scanner.nextLine().equalsIgnoreCase("Y");
+
+
+//
+//            System.out.print("Would you like extra? (Y/N): ");
+//            boolean isExtra = scanner.nextLine().equalsIgnoreCase("Y");
+           boolean isExtra = false;
+           while(true){
+               try{
+                   System.out.print("Would you like extra? (Y/N): ");
+                   String response = scanner.nextLine().trim().toUpperCase();
+
+                   if(response.equals("Y")) {
+                       isExtra = true;
+                       break;
+                   }else if (response.equals("N")) {
+                       isExtra = false;
+                       break;
+                   }else{
+                       System.out.println("Please enter Y or N.");
+                   }
+               }catch (Exception e) {
+                   System.out.println("Error reading input. Please try again.");
+               }
+           }
 
             // Meat and cheese are premium
             boolean isPremium = true;
@@ -124,7 +146,7 @@ public class UserInterface {
         }
 
         //  regular toppings
-        System.out.println("\nAdd regular toppings (lettuce, tomato, onions, etc). Type 'done' to finish.");
+        System.out.println("\nAdd regular toppings (lettuce, tomato, onions, peppers, jalapenos, cucumbers, pickles, guacamole, mushrooms). Type 'done' to finish.");
         while (true) {
             System.out.print("Enter topping: ");
             String name = scanner.nextLine();
@@ -137,7 +159,7 @@ public class UserInterface {
 
         //  sauces
         List<Sauce> sauces = new ArrayList<>();
-        System.out.println("\nAdd sauces (mayo, mustard, ranch, etc). Type 'done' to finish.");
+        System.out.println("\nAdd sauces (mayo, mustard, ranch, ketchup, thousand-island, vinaigrette). Type 'done' to finish.");
         while (true) {
             System.out.print("Enter sauce: ");
             String name = scanner.nextLine();
@@ -177,6 +199,9 @@ public class UserInterface {
 
         Chip chip = new Chip(type);
         currentOrder.addItem(chip);
+
+        System.out.println("Added drink: " + chip.getName());
+        System.out.printf("price: $%.2f\n", chip.getPrice());
     }
 
 }

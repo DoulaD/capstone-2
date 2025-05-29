@@ -41,6 +41,8 @@ public class Order {
 
                 if (!sandwich.getToppings().isEmpty()) {
                     sb.append("Toppings: \n");
+
+
                     for (Topping t : sandwich.getToppings()) {
                         double price = t.getPriceForSize(sandwich.getSize());
                         sb.append(String.format("   -%20s $%.2f\n", t.getName(), price));
@@ -52,7 +54,7 @@ public class Order {
                 if (!sandwich.getSauces().isEmpty()) {
                     sb.append("   Sauces:  ");
                     for (Sauce s : sandwich.getSauces()) {
-                        sb.append(s.getName()).append(", ");
+                        sb.append("     - ").append(s.getName()).append("\n ");
                     }
                 }
             }

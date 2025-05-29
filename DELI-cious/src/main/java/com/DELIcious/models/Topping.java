@@ -3,21 +3,42 @@ package com.DELIcious.models;
 public class Topping {
 
     private String name;
-    private boolean isExtra;
     private boolean isPremium;
+    private boolean isExtra;
 
 
 
-    public Topping(String name, boolean isExtra, boolean isPremium) {
+    public Topping(String name, boolean isPremium, boolean isExtra) {
         this.name = name;
         this.isExtra = isExtra;
         this.isPremium = isPremium;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public boolean isExtra() {
+        return isExtra;
+    }
+
+    public void setExtra(boolean extra) {
+        isExtra = extra;
+    }
+
+    public boolean isPremium() {
+        return isPremium;
+    }
+
+    public void setPremium(boolean premium) {
+        isPremium = premium;
+    }
+
     public double getPriceForSize(String size) {
         if (!isPremium) return 0; // regular toppings are free
 
         double basePrice = switch (name.toLowerCase()) {
-            case "steak", "turkey", "fish", "roast beef", "chicken", "falafel" -> switch (size) {
+            case "steak", "ham", "bacon", "roast beef", "chicken", "salami" -> switch (size) {
                 case "4" -> 1.00;
                 case "8" -> 2.00;
                 case "12" -> 3.00;
