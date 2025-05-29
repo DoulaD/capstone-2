@@ -17,13 +17,13 @@ public class Topping {
         if (!isPremium) return 0; // regular toppings are free
 
         double basePrice = switch (name.toLowerCase()) {
-            case "steak", "ham", "salami", "roast beef", "chicken", "bacon" -> switch (size) {
+            case "steak", "turkey", "fish", "roast beef", "chicken", "falafel" -> switch (size) {
                 case "4" -> 1.00;
                 case "8" -> 2.00;
                 case "12" -> 3.00;
                 default -> 0.0;
             };
-            case "cheese", "american", "cheddar", "provolone", "swiss" -> switch (size) {
+            case "cheese", "american", "cheddar", "provolone", "swiss" , "pepper jack" -> switch (size) {
                 case "4" -> 0.75;
                 case "8" -> 1.50;
                 case "12" -> 2.25;

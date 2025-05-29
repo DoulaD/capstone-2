@@ -11,12 +11,28 @@ public class Sandwich implements IOrderItem {
     private List<Topping> toppings = new ArrayList<>();
     private List<Sauce> sauces = new ArrayList<>();
 
+
+
     public Sandwich(String size, String bread, boolean toasted, List<Topping> toppings, List<Sauce> sauces) {
         this.size = size;
         this.bread = bread;
         this.toasted = toasted;
         this.toppings = toppings;
         this.sauces = sauces;
+
+
+    }
+
+    public String getSize() {
+        return size;
+    }
+
+    public List<Sauce> getSauces() {
+        return sauces;
+    }
+
+    public List<Topping> getToppings() {
+        return toppings;
     }
 
     public void addTopping(Topping topping) {

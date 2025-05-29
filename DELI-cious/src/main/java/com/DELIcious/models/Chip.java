@@ -1,11 +1,11 @@
 package com.DELIcious.models;
 
-public class Chips implements IOrderItem {
+public class Chip implements IOrderItem {
 
 private String type;
 private static final double price = 1.50;
 
-    public Chips(String type) {
+    public Chip(String type) {
         this.type = type;
     }
 

@@ -1,6 +1,7 @@
 package com.DELIcious.ui;
 
 import com.DELIcious.Service.Order;
+import com.DELIcious.Service.OrderReceipt;
 import com.DELIcious.models.*;
 
 import java.util.ArrayList;
@@ -84,8 +85,8 @@ public class UserInterface {
         String confirm = scanner.nextLine();
 
         if (confirm.equalsIgnoreCase("Y")) {
-            System.out.println(">> [Stub] Save receipt to file");
-            // TODO: ReceiptService.saveReceipt(currentOrder);
+            System.out.println();
+             OrderReceipt.saveReceipt(currentOrder);
         } else {
             System.out.println("Order not confirmed. Returning to home.");
         }
@@ -110,7 +111,7 @@ public class UserInterface {
         List<Topping> toppings = new ArrayList<>();
         System.out.println("\nAdd premium toppings (meat/cheese). Type 'done' to finish.");
         while (true) {
-            System.out.print("Enter topping (steak, ham, bacon, cheddar, swiss, etc): ");
+            System.out.print("Enter premium topping (steak, ham, bacon, cheddar, swiss, etc): ");
             String name = scanner.nextLine();
             if (name.equalsIgnoreCase("done")) break;
 
@@ -155,10 +156,10 @@ public class UserInterface {
     private void addDrink() {
         System.out.println("\n==== Add Drink =====");
 
-        System.out.println("Choose drink size(small, medium, large):");
+        System.out.println("Choose drink size(Small, Medium, Large):");
         String size = scanner.nextLine().trim().toLowerCase();
 
-        System.out.println("Choose drink flavor (strawberry-lemonade, orange juice, iced-tea");
+        System.out.println("Choose drink flavor (Lemon-berry, Citrus-punch, Iced-tea");
         String flavor = scanner.nextLine().trim();
         Drink drink = new Drink(size, flavor);
         currentOrder.addItem(drink);
@@ -174,7 +175,7 @@ public class UserInterface {
         System.out.println("Enter chip type (BBQ, sour cream, classic, kettle");
         String type = scanner.nextLine().trim();
 
-        Chips chip = new Chips(type);
+        Chip chip = new Chip(type);
         currentOrder.addItem(chip);
     }
 
